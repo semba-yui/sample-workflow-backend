@@ -1,0 +1,35 @@
+[versions]
+spring-boot = "3.4.5"
+spring-dependency-management = "1.1.7"
+logbook-spring-boot-starter = "3.12.0"
+logstash-logback-encoder = "8.1"
+mapstruct = "1.6.3"
+spotless = "7.0.3"
+errorprone-plugin = "4.2.0"
+errorprone-core = "2.38.0"
+spring-core = "6.2.6"
+junit-jupiter = "5.12.2"
+lombok = "1.18.38"
+
+[libraries]
+spring-core = { group = "org.springframework", name = "spring-core", version.ref = "spring-core" }
+spring-boot-web = { group = "org.springframework.boot", name = "spring-boot-starter-web" }
+spring-boot-actuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator" }
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }
+spring-boot-jpa = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa" }
+spring-boot-batch = { group = "org.springframework.boot", name = "spring-boot-starter-batch" }
+spring-boot-test = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
+spring-boot-validation = { group = "org.springframework.boot", name = "spring-boot-starter-validation" }
+mapstruct = { group = "org.mapstruct", name = "mapstruct", version.ref = "mapstruct" }
+mapstruct-ap = { group = "org.mapstruct", name = "mapstruct-processor", version.ref = "mapstruct" }
+logbook-spring-boot-starter = { module = "org.zalando:logbook-spring-boot-starter", version.ref = "logbook-spring-boot-starter" }
+logstash-logback-encoder = { module = "net.logstash.logback:logstash-logback-encoder", version.ref = "logstash-logback-encoder" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit-jupiter" }
+errorprone-core = { module = "com.google.errorprone:error_prone_core", version.ref = "errorprone-core" }
+
+[plugins]
+spring-boot-plugin = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+errorprone = { id = "net.ltgt.errorprone", version.ref = "errorprone-plugin" }
