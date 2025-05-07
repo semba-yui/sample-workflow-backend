@@ -16,7 +16,7 @@ import org.springframework.lang.Nullable;
 @Builder(toBuilder = true)
 public class Role implements SoftDeletable {
 
-  /** ロールID（PK） */
+  /** ロールID */
   Long roleId;
 
   /** 会社ID (NULL = 全社共通) */

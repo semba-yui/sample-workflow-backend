@@ -10,6 +10,8 @@ errorprone-core = "2.38.0"
 spring-core = "6.2.6"
 junit-jupiter = "5.12.2"
 lombok = "1.18.38"
+jackson = "2.19.0"
+json-schema-validator = "1.5.6"
 
 [libraries]
 spring-core = { group = "org.springframework", name = "spring-core", version.ref = "spring-core" }
@@ -27,6 +29,8 @@ logstash-logback-encoder = { module = "net.logstash.logback:logstash-logback-enc
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit-jupiter" }
 errorprone-core = { module = "com.google.errorprone:error_prone_core", version.ref = "errorprone-core" }
+jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jackson" }
+json-schema-validator = { group = "com.networknt", name = "json-schema-validator", version.ref = "json-schema-validator" }
 
 [plugins]
 spring-boot-plugin = { id = "org.springframework.boot", version.ref = "spring-boot" }

@@ -23,16 +23,21 @@ subprojects {
     group = rootProject.property("projectGroup")!!
     version = rootProject.property("projectVersion")!!
 
-    // version catalog が参照できないため、id や version を個別で定義してあげる必要がある
+    // この時点の subprojects では version catalog が直接参照できないため、version を個別で定義してあげる必要がある
+    // See: https://github.com/gradle/gradle/issues/16634#issuecomment-809345790
     plugins.apply("java-library")
     plugins.apply("checkstyle")
     plugins.apply("jacoco")
     plugins.apply("pmd")
-    plugins.apply("com.diffplug.spotless")
-    plugins.apply("net.ltgt.errorprone")
+    plugins.apply(rootProject.libs.plugins.spotless.get().pluginId)
+    plugins.apply(rootProject.libs.plugins.errorprone.get().pluginId)
 
     dependencies {
-        add("errorprone", "com.google.errorprone:error_prone_core:2.38.0")
+        // ここも同様に version catalog が直接参照できない
+        add(
+            "errorprone",
+            "${rootProject.libs.errorprone.core.get().group}:${rootProject.libs.errorprone.core.get().name}:${rootProject.libs.errorprone.core.get().version}"
+        )
     }
 
     checkstyle {
